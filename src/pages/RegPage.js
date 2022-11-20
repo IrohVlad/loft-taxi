@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from '../components/Header';
 import MainArea from '../components/MainArea';
-import Login from '../components/Login';
+import Reg from '../components/Reg';
 
-const MainPage = () => {
+const MapPage = () => {
     return (
         <>
             <Header/>
-            <MainArea><Login/></MainArea>
+            <MainArea><Reg/></MainArea>
         </>
     );
 };
 
-export default MainPage;
+export default MapPage;

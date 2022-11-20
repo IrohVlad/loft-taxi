@@ -1,5 +1,5 @@
 import MainPage from "./pages/MainPage";
-import MapPage from "./pages/MapPage";
+import RegPage from "./pages/RegPage";
 
 export const Router = [
     {
@@ -7,7 +7,7 @@ export const Router = [
         endpoint: '/'
     },
     {
-        component: <MapPage/>,
-        endpoint: '/map'
+        component: <RegPage/>,
+        endpoint: '/reg'
     }
 ]

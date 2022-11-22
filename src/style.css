@@ -531,3 +531,13 @@ header{
 form{
     width: 100%;
 }
+.mapPage {
+    height: calc(100vh - 102px);
+    width: 100%;
+}
+.mapPage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

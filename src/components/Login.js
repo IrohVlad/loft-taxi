@@ -1,11 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
     return (
         <div className='login'>
             <div className='login-container'>
                 <div className="title">Войти</div>
-                <form>
+                <form onSubmit={()=> navigate('/map')}>
                     <div className="forms">
                         <div className="form">
                             <div className="form__title">Email</div>

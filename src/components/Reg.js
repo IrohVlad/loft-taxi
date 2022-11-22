@@ -1,11 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Reg = () => {
+    const navigate = useNavigate();
     return (
         <div className='reg'>
             <div className='login-container'>
                 <div className="title">Регистрация</div>
-                <form>
+                <form onSubmit={()=> navigate('/map')}>
                     <div className="forms">
                         <div className="form">
                             <div className="form__title">Email*</div>
@@ -13,7 +15,7 @@ const Reg = () => {
                         </div>
                         <div className="form">
                             <div className="form__title">Как вас зовут?*</div>
-                            <input type='email' required placeholder='Петр Александрович' />
+                            <input type='text' required placeholder='Петр Александрович' />
                         </div>
                         <div className="form">
                             <div className="form__title">Придумайте пароль*</div>

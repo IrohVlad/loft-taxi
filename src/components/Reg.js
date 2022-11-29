@@ -9,17 +9,17 @@ const Reg = () => {
                 <div className="title">Регистрация</div>
                 <form onSubmit={()=> navigate('/map')}>
                     <div className="forms">
-                        <div className="form">
-                            <div className="form__title">Email*</div>
-                            <input type='email' required placeholder='mail@mail.ru' />
+                    <div className="form">
+                            <label className="form__title">Как вас зовут?*</label>
+                            <input name='name' type='text' required placeholder='Петр Александрович' />
                         </div>
                         <div className="form">
-                            <div className="form__title">Как вас зовут?*</div>
-                            <input type='text' required placeholder='Петр Александрович' />
+                            <label className="form__title">Email*</label>
+                            <input name='email' type='email' required placeholder='mail@mail.ru' />
                         </div>
                         <div className="form">
-                            <div className="form__title">Придумайте пароль*</div>
-                            <input type='password' required placeholder='*************'/>
+                            <label className="form__title">Придумайте пароль*</label>
+                            <input name='password' type='password' required placeholder='*************'/>
                         </div>
                     </div>
                     <button className="button">Зарегистрироваться</button>

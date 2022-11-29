@@ -1,14 +1,20 @@
 import {Routes, Route} from 'react-router-dom';
-import {Router} from '../Router'
+import {Router, LoggedRouter} from '../Router'
+import { AuthContext } from '../AuthContext';
 
-import React from 'react';
+import React, {useContext} from 'react';
 
 const AppRouter = () => {
+    const {isLoggedIn} = useContext(AuthContext);
     return (
         <Routes>
-            {Router.map(item => {
+            {isLoggedIn ? LoggedRouter.map(item => {
                return <Route key={item.endpoint} element={item.component} path={item.endpoint} />
-            })}
+            })
+            :
+            Router.map(item => {
+                return <Route key={item.endpoint} element={item.component} path={item.endpoint} />
+             })}
         </Routes>
     );
 };

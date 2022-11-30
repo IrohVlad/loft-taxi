@@ -12,7 +12,26 @@ export const Router = [
         endpoint: '/reg'
     },
     {
+        component: <MainPage/>,
+        endpoint: '*'
+    }
+]
+
+export const LoggedRouter = [
+    {
+        component: <MainPage/>,
+        endpoint: '/'
+    },
+    {
+        component: <RegPage/>,
+        endpoint: '/reg'
+    },
+    {
         component: <MapPage/>,
         endpoint: '/map'
+    },
+    {
+        component: <MainPage/>,
+        endpoint: '*'
     }
 ]

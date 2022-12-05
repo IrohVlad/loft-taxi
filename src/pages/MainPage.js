@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import MainArea from '../components/MainArea';
 import Login from '../components/Login';
 import Profile from '../components/Profile';
-import { AuthContext } from '../AuthContext';
+import { useSelector } from 'react-redux';
 
 const MainPage = () => {
-    const {isLoggedIn} = useContext(AuthContext);
+    const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
     return (
         <>
             <Header/>

@@ -1,18 +1,21 @@
-import React, {useState, useContext} from 'react';
-import { AuthContext } from '../AuthContext';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Authenticate} from '../redux/actions';
+
 
 const Login = () => {
-    const {logIn} = useContext(AuthContext);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [data, setData] = useState({}); 
     return (
         <div className='login'>
             <div className='login-container'>
                 <div className="title">Войти</div>
-                <form onSubmit={()=> {
+                <form onSubmit={(e)=> {
+                    e.preventDefault();
                     navigate('/map')
-                    logIn(data.email, data.pass)
+                    dispatch(Authenticate(data.email, data.pass))
                     }}>
                     <div className="forms">
                         <div className="form">
@@ -27,7 +30,7 @@ const Login = () => {
                     <div className="under-forms">Забыли пароль?</div>
                     <button className="button">Войти</button>
                 </form>
-                <div className="help">Новый пользователь? <span>Регистрация</span></div>
+                <div className="help">Новый пользователь? <span onClick={()=>{navigate('/reg')}}>Регистрация</span></div>
             </div>
         </div>
     );

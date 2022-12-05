@@ -1,11 +1,11 @@
 import {Routes, Route} from 'react-router-dom';
 import {Router, LoggedRouter} from '../Router'
-import { AuthContext } from '../AuthContext';
-
-import React, {useContext} from 'react';
+import { useSelector} from 'react-redux';
+import React from 'react';
 
 const AppRouter = () => {
-    const {isLoggedIn} = useContext(AuthContext);
+    const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
+
     return (
         <Routes>
             {isLoggedIn ? LoggedRouter.map(item => {

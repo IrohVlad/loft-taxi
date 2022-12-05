@@ -24,7 +24,7 @@ const Reg = () => {
                     </div>
                     <button className="button">Зарегистрироваться</button>
                 </form>
-                <div className="help">Уже зарегестрированны? <span>Войти</span></div>
+                <div className="help">Уже зарегестрированны? <span onClick={()=>{navigate('/')}}>Войти</span></div>
             </div>
         </div>
     );
